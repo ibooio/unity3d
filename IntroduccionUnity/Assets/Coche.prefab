@@ -566,6 +566,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7403264711602783508}
   - component: {fileID: -4526837162386575719}
+  - component: {fileID: 8569478258813382902}
   m_Layer: 0
   m_Name: Coche
   m_TagString: Untagged
@@ -610,6 +611,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8569478258813382902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7403264711602783507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c47b6edfac1424db1ee505db755a18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  x: 0.5
+  y: 0.5
 --- !u!1 &8132329674282296763
 GameObject:
   m_ObjectHideFlags: 0
