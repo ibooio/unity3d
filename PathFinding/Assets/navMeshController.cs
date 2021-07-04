@@ -4,23 +4,29 @@ using UnityEngine.AI;
 public class navMeshController : MonoBehaviour
 {
 
-    public Transform objective;
+
+    public bool newDestination=false;
+    public Vector3 destination;
+    NavMeshAgent agent;
+
     // Start is called before the first frame update
     void Start()
     {
-        NavMeshAgent agent = GetComponent<NavMeshAgent>();
-        agent.destination = objective.position;
+        agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(newDestination){
+            agent.destination = destination;
+            newDestination = false;
+        }
     }
 
-
-    public void moveObjective(){
-        objective.position = new Vector3(Random.Range(0,5), objective.position.y, objective.position.z);
+    public void setDestination(Vector3 d){
+        destination=d;
+        newDestination= true;
     }
 
 }
