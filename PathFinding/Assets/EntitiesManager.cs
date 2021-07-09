@@ -21,7 +21,8 @@ public class EntitiesManager : MonoBehaviour
         persons = new List<Transform>();
         foreach (Transform child in buildingsGroup.transform)
         {
-            buildings.Add(child);
+            if( child.name != "Cube" )
+                buildings.Add(child);
         }
 
         foreach (Transform child in personsGroup.transform)
