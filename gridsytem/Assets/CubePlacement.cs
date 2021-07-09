@@ -10,15 +10,8 @@ public class CubePlacement : MonoBehaviour
     public LayerMask mask;
     public float LastPosY;
     public Vector3 mousePos;
-    public Renderer rend;
     public Material matGrid, matDefault;
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        rend = GameObject.Find("Ground").GetComponent<Renderer>();
-    }
 
     // Update is called once per frame
     void Update()
@@ -32,15 +25,13 @@ public class CubePlacement : MonoBehaviour
             int posZ = (int)Mathf.Round(hit.point.z);
             //Debug.Log(posX +','+ posZ);
             objToMove.transform.position = new Vector3(posX, LastPosY, posZ);
-            //rend.material = matGrid;
         }
 
 
         if (  Input.GetMouseButtonDown(0) ){
             
             Instantiate(objToPlace, objToMove.transform.position, Quaternion.identity);
-            //Destroy(gameObject);
-            //rend.material = matDefault;
+
         }
 
     }
