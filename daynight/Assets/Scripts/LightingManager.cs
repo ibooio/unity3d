@@ -27,7 +27,7 @@ public class LightingManager : MonoBehaviour
     private float minuteGame = 0;
     private float secondGame = 0;
 
-
+    public static int velocity = 1;
 
     private void Update(){
         deltaTime = Time.deltaTime;
@@ -71,7 +71,7 @@ public class LightingManager : MonoBehaviour
 
 
     private void updateSecondGame(){
-        secondGame += deltaTime;
+        secondGame += deltaTime * TimeManager.velocity;
         //if( secondGame >= 2 ){  // 2 segundo 1 minuto
         //if( secondGame >= 1 ){  // 1 segundo 1 minuto
         //if( secondGame >= 0.1 ){  // 1 segundo 10 minutos
