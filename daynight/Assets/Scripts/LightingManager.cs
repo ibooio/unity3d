@@ -12,7 +12,6 @@ public class LightingManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI timerReal;
     [SerializeField] TextMeshProUGUI timerGame;
 
-    private float count = 0;
     
     private float deltaTime;
 
@@ -23,7 +22,6 @@ public class LightingManager : MonoBehaviour
     private float second = 0;
 
     // tiempo juego
-    private float dayInMinutes=1; // un minuto es un día
     private float dayGame;
     private float hourGame = 12;
     private float minuteGame = 0;
