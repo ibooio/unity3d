@@ -19,12 +19,12 @@ public class TimeManager : MonoBehaviour
 
     public void play2(){
         Debug.Log("P2");
-        velocity = 2;
+        velocity = 10;
     }
 
     public void play3(){
         Debug.Log("P3");
-        velocity = 3;
+        velocity = 30;
     }
 
 }
