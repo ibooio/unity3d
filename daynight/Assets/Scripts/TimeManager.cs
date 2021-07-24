@@ -1,30 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class TimeManager : MonoBehaviour
 {
-   
-   public static int velocity = 1;
+   [SerializeField] private Velocity velocity;
 
     public void pause(){
         Time.timeScale=0;
     }
 
     public void play1(){
-        Debug.Log("P1");
         Time.timeScale=1f;
-        velocity = 1;
+        velocity.SetValue(1);
+
     }
 
     public void play2(){
-        Debug.Log("P2");
-        velocity = 10;
+        velocity.SetValue(10);
     }
 
     public void play3(){
-        Debug.Log("P3");
-        velocity = 30;
+        velocity.SetValue(30);
     }
 
 }

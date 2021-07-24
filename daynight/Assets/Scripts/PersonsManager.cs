@@ -1,9 +1,10 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 public class PersonsManager : MonoBehaviour
 {
+    [SerializeField] private Velocity velocity;
     // Start is called before the first frame update
     public GameObject person;
     public List<GameObject> persons;
@@ -12,12 +13,10 @@ public class PersonsManager : MonoBehaviour
     private Color[] colors= new Color[]{ Color.red, Color.green, Color.magenta, Color.yellow };
     private string[] names= new string[]{ "Ale", "Unla", "Fonce", "Emma" };
 
-    private int velocity;
-
     void Start()
     {
 
-        velocity = TimeManager.velocity;
+        velocity.OnVelocityChange += OnVelocityChange;
         // creamos cuatro personitas
         for (int i = 0; i < 4; i++)
         {
@@ -32,20 +31,18 @@ public class PersonsManager : MonoBehaviour
         // le pedimos a cada personita que se presente
         foreach(GameObject person in persons) {
             person.GetComponent<Person>().Hello();
-            person.GetComponent<NavMeshAgent>().destination = new Vector3(40,1,30);
-            person.GetComponent<NavMeshAgent>().speed = 3.5f * velocity;
+            person.GetComponent<NavMeshAgent>().destination = new Vector3(0,1,-10);
+            person.GetComponent<NavMeshAgent>().speed = 3.5f * velocity.GetValue();
+        }
+    }
+
+    private void OnVelocityChange(object sender, EventArgs e){
+        Debug.Log("funsafdsafsaf safsa2a");
+
+        foreach(GameObject person in persons) {
+            person.GetComponent<NavMeshAgent>().speed = 3.5f * velocity.GetValue();
         }
     }
 
 
-    // Update is called once per frame
-    void Update()
-    {
-        if( TimeManager.velocity != velocity ){
-            velocity = TimeManager.velocity;
-            foreach(GameObject person in persons) {
-                person.GetComponent<NavMeshAgent>().speed = 3.5f * velocity;
-            }
-        }
-    }
 }

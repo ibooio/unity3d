@@ -122,7 +122,28 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: d5a7d6e8ae8d3384abc8f59d4e7d8605, type: 2}
+--- !u!1 &68843954 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2509426398879185139, guid: 68203b8a08b750642978513bc3cf0e10, type: 3}
+  m_PrefabInstance: {fileID: 899178440}
+  m_PrefabAsset: {fileID: 0}
+--- !u!208 &68843959
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68843954}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &169600902
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,7 +385,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57926775794ffe043af41dc65c788e33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  person: {fileID: 288717613224792305, guid: 6fa1dac3830c65f438b777bcb8a95a26, type: 3}
+  velocity: {fileID: 11400000, guid: 9244a6c42de43dd4bbf6327b3de8df00, type: 2}
+  person: {fileID: 1062346089798016803, guid: 6fa1dac3830c65f438b777bcb8a95a26, type: 3}
   persons: []
 --- !u!4 &299779045
 Transform:
@@ -557,6 +579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85b242164120198429b77bc59ad343a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velocity: {fileID: 11400000, guid: 9244a6c42de43dd4bbf6327b3de8df00, type: 2}
   DirectionalLight: {fileID: 705507994}
   TimeOfDay: 14
   timerReal: {fileID: 1299615714}
@@ -751,7 +774,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 8
   m_IsActive: 1
 --- !u!64 &804782796
 MeshCollider:
@@ -912,7 +935,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 831974356}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1380540595}
+        m_TargetAssemblyTypeName: TimeManager, Assembly-CSharp
+        m_MethodName: play3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &831974356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1338,6 +1373,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299615712}
   m_CullTransparentMesh: 1
+--- !u!1 &1348446254 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2509426398879185139, guid: 68203b8a08b750642978513bc3cf0e10, type: 3}
+  m_PrefabInstance: {fileID: 410756273}
+  m_PrefabAsset: {fileID: 0}
+--- !u!208 &1348446259
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348446254}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1380393014
 GameObject:
   m_ObjectHideFlags: 0
@@ -1501,6 +1557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc73b115920966b45870abaefbe848f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velocity: {fileID: 11400000, guid: 9244a6c42de43dd4bbf6327b3de8df00, type: 2}
 --- !u!4 &1380540596
 Transform:
   m_ObjectHideFlags: 0
@@ -2016,3 +2073,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2100070915}
   m_CullTransparentMesh: 1
+--- !u!1 &2111471765 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1774885515971137476, guid: de40d4efb2cade34db6098ee3e11b703, type: 3}
+  m_PrefabInstance: {fileID: 2050295108}
+  m_PrefabAsset: {fileID: 0}
+--- !u!208 &2111471767
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111471765}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
